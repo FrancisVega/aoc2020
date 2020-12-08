@@ -5,17 +5,26 @@ function formatElement(el) {
 }
 
 const checkElement = el => {
-  const formatedElement = formatElement(el)
-  const pattern = formatedElement.c
+  const forEl = formatElement(el)
+  const pattern = forEl.c
   const re = new RegExp(pattern, "g")
-  const matchResult = formatedElement.d.match(re) || []
+  const matchResult = forEl.d.match(re) || []
+  return matchResult.length >= forEl.a && matchResult.length <= forEl.b
+}
+
+const checkElement2 = el => {
+  const forEl = formatElement(el)
+  const p1 = forEl.d.split("")[Number(forEl.a) - 1]
+  const p2 = forEl.d.split("")[Number(forEl.b) - 1]
   return (
-    matchResult.length >= formatedElement.a &&
-    matchResult.length <= formatedElement.b
+    (p1 === forEl.c && p2 !== forEl.c) || (p1 !== forEl.c && p2 === forEl.c)
   )
 }
 
 const checkList = list =>
   list.map(el => checkElement(el)).filter(Boolean).length
 
-module.exports = { formatElement, checkElement, checkList }
+const checkList2 = list =>
+  list.map(el => checkElement2(el)).filter(Boolean).length
+
+module.exports = { formatElement, checkElement, checkList, checkList2 }

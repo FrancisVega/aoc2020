@@ -1,5 +1,10 @@
 const { readInputAsArray } = require("../utils")
-const { formatElement, checkElement, checkList } = require("./index")
+const {
+  formatElement,
+  checkElement,
+  checkList,
+  checkList2,
+} = require("./index")
 
 // input processing
 const input = readInputAsArray("day02", true)
@@ -22,6 +27,8 @@ describe("Day x: ...", () => {
     })
   })
   describe("Part 2", () => {
-    test("should...", () => {})
+    test("should return the example solution", () => {
+      expect(checkList2(input)).toBe(1)
+    })
   })
 })
