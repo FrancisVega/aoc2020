@@ -9,7 +9,7 @@ const {
 // input processing
 const input = readInputAsArray("day02", true)
 
-describe("Day x: ...", () => {
+describe("Day 02", () => {
   describe("Part 1", () => {
     test("should return an object with the four elements", () => {
       expect(formatElement("1-3 a: abcde")).toStrictEqual({

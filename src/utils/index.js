@@ -12,4 +12,9 @@ const readInputAsArray = (day, ex) => {
     .filter(line => line !== "")
 }
 
-module.exports = { readInput, readInputAsArray }
+const fillArrayOfInt = count =>
+  Array(count)
+    .fill(0)
+    .map((_, idx) => idx)
+
+module.exports = { readInput, readInputAsArray, fillArrayOfInt }
