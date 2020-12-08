@@ -1,0 +1,14 @@
+{
+  "name": "advent-of-code-2020",
+  "description": "Advent of code repo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Francis Vega",
+  "scripts": {
+    "test": "jest",
+    "develop": "jest --watch src/$npm_config_day.test.js"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
