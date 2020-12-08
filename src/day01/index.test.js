@@ -2,21 +2,23 @@ const { readInputAsArray } = require("../utils")
 const {
   arraySum,
   arrayMult,
+  triplaList,
   duplaList,
   getTwoMagicNumbers,
+  getThreeMagicNumbers,
 } = require("./index")
 
 // input processing
-const arrayInput = readInputAsArray("day01")
-const arrayInput_ex = readInputAsArray("day01", true)
-
-// final input
-const input = arrayInput
-const input_ex = arrayInput_ex
+const input = readInputAsArray("day01", true)
 
 // test
 describe("Day 1: Report Repair", () => {
   describe("Generic", () => {
+    describe("triplaList", () => {
+      test("should return an array", () => {
+        expect(triplaList(input)).toBeInstanceOf(Array)
+      })
+    })
     describe("Sum elements of an array", () => {
       test("should return valid number", () => {
         expect(arraySum([1, 2])).toBe(3)
@@ -36,15 +38,28 @@ describe("Day 1: Report Repair", () => {
       })
     })
   })
+
   describe("Part 1", () => {
     test("should return input file lines^2", () => {
-      expect(duplaList(input).length).toBe(arrayInput.length ** 2)
+      expect(duplaList(input).length).toBe(input.length ** 2)
     })
-    test("should return two numbers that adds `sum`", () => {
-      expect(arraySum(getTwoMagicNumbers(input_ex, 2020))).toBe(2020)
+    test("should return two numbers that add the `sum`", () => {
+      expect(arraySum(getTwoMagicNumbers(input, 2020))).toBe(2020)
     })
     test("should return example final solution", () => {
-      expect(arrayMult(getTwoMagicNumbers(input_ex, 2020))).toBe(514579)
+      expect(arrayMult(getTwoMagicNumbers(input, 2020))).toBe(514579)
+    })
+  })
+
+  describe("Part 2", () => {
+    test("should return input file lines^3", () => {
+      expect(triplaList(input).length).toBe(input.length ** 3)
+    })
+    test("should return two numbers that add the `sum`", () => {
+      expect(arraySum(getThreeMagicNumbers(input, 2020))).toBe(2020)
+    })
+    test("should return example final solution", () => {
+      expect(arrayMult(getThreeMagicNumbers(input, 2020))).toBe(241861950)
     })
   })
 })
