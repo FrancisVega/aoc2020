@@ -1,4 +1,4 @@
-const { readFileSync } = require("fs")
+const { readInputAsArray } = require("../utils")
 const {
   arraySum,
   arrayMult,
@@ -7,13 +7,8 @@ const {
 } = require("./index")
 
 // input processing
-const inputFile = `./src/day01/input`
-const rawInput = readFileSync(`${inputFile}`, "utf8")
-const arrayInput = rawInput.split("\n").filter(x => x !== "")
-
-const inputFile_ex = `./src/day01/input-example`
-const rawInput_ex = readFileSync(`${inputFile_ex}`, "utf8")
-const arrayInput_ex = rawInput_ex.split("\n").filter(x => x !== "")
+const arrayInput = readInputAsArray("day01")
+const arrayInput_ex = readInputAsArray("day01", true)
 
 // final input
 const input = arrayInput
