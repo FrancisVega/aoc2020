@@ -6,7 +6,8 @@
   "author": "Francis Vega",
   "scripts": {
     "test": "jest",
-    "develop": "jest --watch src/day$npm_config_day/index.test.js"
+    "develop": "jest --watch src/day$npm_config_day/index.test.js",
+    "solution": "node src/day$npm_config_day/solution"
   },
   "devDependencies": {
     "jest": "^26.6.3"

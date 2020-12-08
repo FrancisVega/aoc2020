@@ -1,20 +1,16 @@
-const { readFileSync } = require("fs")
+const { readInputAsArray } = require("../utils")
 const {
   arrayMult,
   getTwoMagicNumbers,
   getThreeMagicNumbers,
 } = require("./index")
 
-const inputFile = `./src/day01/input`
-const rawInput = readFileSync(`${inputFile}`, "utf8")
-const arrayInput = rawInput.split("\n").filter(x => x !== "")
+const input = readInputAsArray("day01")
 
-// Part 1
-console.log(
-  `Day 01. Part 1:\n-> ${arrayMult(getTwoMagicNumbers(arrayInput, 2020))}`
-)
+console.log("# Day 01\n")
 
-// Part 2
-console.log(
-  `Day 01. Part 2:\n-> ${arrayMult(getThreeMagicNumbers(arrayInput, 2020))}`
-)
+const part1Solution = arrayMult(getTwoMagicNumbers(input, 2020))
+const part2Solution = arrayMult(getThreeMagicNumbers(input, 2020))
+
+console.log(`Part 1 -> ${part1Solution}`)
+console.log(`Part 2 -> ${part2Solution}`)
