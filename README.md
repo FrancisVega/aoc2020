@@ -1,8 +1,17 @@
 # Advent of code 2020
 
-## scripts
+## Scripts
 
-`npm test`: it runs all the tests
-`npm run log --day=xx`: it watch the index.js for the day xx
-`npm run develop --day=xx`: it watchs the tests for the day xx
-`npm run solution --day=xx`: it prints the solution in the terminal
+```bash
+Run all the tests
+# npm test
+
+Watch the index of day xx
+# npm run log --day=xx
+
+Watch the tests of day xx
+# npm run develop --day=xx
+
+Prints the solution in the terminal
+# npm run solution --day=xx
+```
